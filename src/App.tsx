@@ -13,10 +13,10 @@ export default function App() {
   const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '40%']);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  const phone = "0915286383";
-  const whatsapp = "0915286383";
-  const address = "Fakhre Aalam road, Peshawar Cantt, near Ufone office, Peshawar Cantonment, 25000, Pakistan";
-  const mapLink = "https://maps.app.goo.gl/j6ySuJTppvJJ8Ch56";
+  const phone = "03006910513";
+  const whatsapp = "03006910513";
+  const address = "948-B Maulana Shaukat Ali Rd, Block B Faisal Town, Lahore, Pakistan";
+  const mapLink = "https://maps.app.goo.gl/rSL2eL5VhwfwncqE7";
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -45,8 +45,9 @@ export default function App() {
               transition={{ duration: 0.8 }}
               className="flex-shrink-0 flex items-center"
             >
-              <span className="font-serif text-3xl font-bold tracking-widest text-white">
-                CAR<span className="text-brand-accent">CHOICE</span>
+              <span className="font-serif text-2xl md:text-3xl font-bold tracking-widest text-white flex items-center gap-2">
+                FIRST<span className="text-brand-accent">CHOICE</span>
+                <span className="text-sm tracking-[0.2em] text-gray-400 font-light hidden sm:inline">MOTORS</span>
               </span>
             </motion.div>
             
@@ -144,7 +145,7 @@ export default function App() {
             </motion.h1>
             
             <motion.p variants={fadeUp} className="text-lg md:text-xl text-gray-400 max-w-xl mb-12 font-light leading-relaxed">
-              Experience top-tier automotive excellence at Car Choice. Discover our premium selection of vehicles ready for you to drive home in Peshawar.
+              Experience top-tier automotive excellence at First Choice Motors. Discover our premium selection of vehicles ready for you to drive home in Lahore.
             </motion.p>
             
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-start gap-6">
@@ -203,11 +204,11 @@ export default function App() {
                 <span className="text-brand-accent font-semibold tracking-[0.2em] uppercase text-xs">Why Choose Us</span>
               </div>
               <h2 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
-                The Car Choice <br/><span className="italic text-gray-400 font-light">Advantage</span>
+                The First Choice <br/><span className="italic text-gray-400 font-light">Advantage</span>
               </h2>
             </div>
             <p className="text-gray-400 max-w-md font-light leading-relaxed">
-              We redefine the car buying experience with unparalleled service, rigorous quality standards, and a curated selection of premium vehicles.
+              We redefine the car buying experience with unparalleled service, rigorous quality standards, and a curated selection of premium vehicles in Lahore.
             </p>
           </motion.div>
           
@@ -294,7 +295,7 @@ export default function App() {
               <div className="absolute bottom-0 left-0 p-10 lg:p-12 w-full flex flex-col sm:flex-row justify-between items-end gap-6">
                 <div>
                   <h3 className="text-3xl font-serif font-semibold text-white mb-2">Visit Our Showroom</h3>
-                  <p className="text-gray-300 font-light">Experience our collection in person at Peshawar Cantt.</p>
+                  <p className="text-gray-300 font-light">Experience our collection in person at Faisal Town, Lahore.</p>
                 </div>
                 <a 
                   href={mapLink}
@@ -362,7 +363,7 @@ export default function App() {
               
               <div className="space-y-6 text-gray-400 font-light text-lg leading-relaxed mb-10">
                 <p>
-                  Located conveniently on Fakhre Aalam road in Peshawar Cantt, Car Choice is dedicated to providing an exceptional car buying experience. 
+                  Located conveniently on Maulana Shaukat Ali Rd in Faisal Town, Lahore, First Choice Motors is dedicated to providing an exceptional car buying experience. 
                 </p>
                 <p>
                   We understand that purchasing a car is a major decision, and we are here to help you find the perfect vehicle that matches your ambition and lifestyle.
@@ -371,7 +372,7 @@ export default function App() {
               
               <ul className="space-y-5 mb-12">
                 {[
-                  "Centrally located near Ufone office",
+                  "Centrally located in Faisal Town, Lahore",
                   "Clean, sanitized, and fully inspected vehicles",
                   "Transparent pricing with no hidden fees",
                   "Dedicated customer support"
@@ -426,7 +427,7 @@ export default function App() {
                 Ready to find <br/><span className="italic font-light text-gray-400">your next car?</span>
               </h2>
               <p className="text-gray-400 font-light mb-16 text-lg max-w-md leading-relaxed">
-                Visit our showroom in Peshawar Cantt or contact us directly to schedule a test drive today.
+                Visit our showroom in Faisal Town, Lahore or contact us directly to schedule a test drive today.
               </p>
               
               <div className="space-y-10">
@@ -510,8 +511,8 @@ export default function App() {
                       <MapPin size={20} className="text-brand-accent" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-serif font-bold text-white">CAR CHOICE</h3>
-                      <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">Peshawar Cantt</p>
+                      <h3 className="text-xl font-serif font-bold text-white">FIRST CHOICE</h3>
+                      <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">Faisal Town, Lahore</p>
                     </div>
                   </div>
                   <a 
@@ -537,9 +538,9 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-10 mb-16">
             <div className="text-center md:text-left">
               <span className="font-serif text-4xl font-bold tracking-widest text-white block mb-3">
-                CAR<span className="text-brand-accent">CHOICE</span>
+                FIRST<span className="text-brand-accent">CHOICE</span>
               </span>
-              <p className="text-gray-500 text-sm font-light tracking-wide">Premium Car Dealership in Peshawar.</p>
+              <p className="text-gray-500 text-sm font-light tracking-wide">Premium Car Dealership in Lahore.</p>
             </div>
             
             <div className="flex items-center gap-4">
@@ -556,8 +557,8 @@ export default function App() {
           </div>
           
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-xs tracking-widest uppercase">&copy; {new Date().getFullYear()} Car Choice. All rights reserved.</p>
-            <p className="text-gray-600 text-xs tracking-widest uppercase">Peshawar Cantonment, Pakistan</p>
+            <p className="text-gray-600 text-xs tracking-widest uppercase">&copy; {new Date().getFullYear()} First Choice Motors. All rights reserved.</p>
+            <p className="text-gray-600 text-xs tracking-widest uppercase">Lahore, Pakistan</p>
           </div>
         </div>
       </footer>
