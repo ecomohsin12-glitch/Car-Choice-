@@ -9,6 +9,7 @@ import { useState } from 'react';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('Hypercars');
   const { scrollYProgress } = useScroll();
   const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '40%']);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
@@ -34,9 +35,9 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-dark text-brand-light selection:bg-brand-accent selection:text-brand-dark font-sans">
+    <div className="min-h-screen bg-white text-black selection:bg-brand-accent selection:text-white font-sans">
       {/* Navigation */}
-      <nav className="fixed w-full z-50 transition-all duration-300 bg-brand-dark/50 backdrop-blur-xl border-b border-white/5">
+      <nav className="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-xl border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <motion.div 
@@ -45,9 +46,9 @@ export default function App() {
               transition={{ duration: 0.8 }}
               className="flex-shrink-0 flex items-center"
             >
-              <span className="font-serif text-2xl md:text-3xl font-bold tracking-widest text-white flex items-center gap-2">
+              <span className="font-sans text-2xl md:text-3xl font-black tracking-tighter text-black flex items-center gap-2">
                 FIRST<span className="text-brand-accent">CHOICE</span>
-                <span className="text-sm tracking-[0.2em] text-gray-400 font-light hidden sm:inline">MOTORS</span>
+                <span className="text-sm tracking-[0.2em] text-gray-500 font-medium hidden sm:inline uppercase">MOTORS</span>
               </span>
             </motion.div>
             
@@ -58,15 +59,15 @@ export default function App() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hidden md:flex items-center space-x-10"
             >
-              <a href="#about" className="text-gray-300 hover:text-white transition-colors text-xs font-semibold uppercase tracking-[0.2em]">About</a>
-              <a href="#inventory" className="text-gray-300 hover:text-white transition-colors text-xs font-semibold uppercase tracking-[0.2em]">Inventory</a>
-              <a href="#contact" className="text-gray-300 hover:text-white transition-colors text-xs font-semibold uppercase tracking-[0.2em]">Contact</a>
+              <a href="#features" className="text-gray-500 hover:text-black transition-colors text-xs font-bold uppercase tracking-[0.2em]">Why Us</a>
+              <a href="#inventory" className="text-gray-500 hover:text-black transition-colors text-xs font-bold uppercase tracking-[0.2em]">Inventory</a>
+              <a href="#contact" className="text-gray-500 hover:text-black transition-colors text-xs font-bold uppercase tracking-[0.2em]">Contact</a>
               <a 
                 href={`tel:${phone}`}
-                className="group relative px-6 py-3 overflow-hidden rounded-full bg-white/5 border border-white/10 hover:border-brand-accent/50 transition-all duration-300"
+                className="group relative px-6 py-3 overflow-hidden rounded-full bg-black border border-black hover:border-brand-accent transition-all duration-300"
               >
                 <div className="absolute inset-0 w-0 bg-brand-accent transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-                <span className="relative flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white group-hover:text-brand-dark transition-colors duration-300">
+                <span className="relative flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white group-hover:text-black transition-colors duration-300">
                   <Phone size={14} />
                   Call Now
                 </span>
@@ -77,7 +78,7 @@ export default function App() {
             <div className="md:hidden flex items-center">
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white p-2"
+                className="text-black p-2"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -90,16 +91,16 @@ export default function App() {
           <motion.div 
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
-            className="md:hidden bg-brand-dark/95 backdrop-blur-3xl border-t border-white/5"
+            className="md:hidden bg-white border-t border-gray-100"
           >
             <div className="px-4 pt-4 pb-8 space-y-2">
-              <a href="#about" onClick={() => setIsMenuOpen(false)} className="block px-4 py-4 text-sm font-medium text-gray-300 hover:text-white uppercase tracking-widest border-b border-white/5">About</a>
-              <a href="#inventory" onClick={() => setIsMenuOpen(false)} className="block px-4 py-4 text-sm font-medium text-gray-300 hover:text-white uppercase tracking-widest border-b border-white/5">Inventory</a>
-              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="block px-4 py-4 text-sm font-medium text-gray-300 hover:text-white uppercase tracking-widest border-b border-white/5">Contact</a>
+              <a href="#features" onClick={() => setIsMenuOpen(false)} className="block px-4 py-4 text-sm font-bold text-gray-600 hover:text-black uppercase tracking-widest border-b border-gray-50">Why Us</a>
+              <a href="#inventory" onClick={() => setIsMenuOpen(false)} className="block px-4 py-4 text-sm font-bold text-gray-600 hover:text-black uppercase tracking-widest border-b border-gray-50">Inventory</a>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)} className="block px-4 py-4 text-sm font-bold text-gray-600 hover:text-black uppercase tracking-widest border-b border-gray-50">Contact</a>
               <div className="pt-6 flex flex-col gap-4 px-4">
                 <a 
                   href={`tel:${phone}`}
-                  className="w-full bg-brand-accent text-brand-dark px-4 py-4 rounded-full text-center font-bold uppercase tracking-widest flex items-center justify-center gap-2"
+                  className="w-full bg-black text-white px-4 py-4 rounded-full text-center font-bold uppercase tracking-widest flex items-center justify-center gap-2"
                 >
                   <Phone size={18} />
                   Call Us
@@ -111,305 +112,334 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=2069&auto=format&fit=crop" 
-            alt="Luxury Car" 
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-brand-dark/50 to-brand-dark"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_100%)] opacity-80"></div>
-        </motion.div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
-          <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            animate="show"
-            className="max-w-4xl"
-          >
-            <motion.div variants={fadeUp} className="flex items-center gap-4 mb-6">
-              <div className="h-[1px] w-12 bg-brand-accent"></div>
-              <span className="text-brand-accent font-semibold tracking-[0.3em] uppercase text-xs">
-                Premium Car Dealership
-              </span>
-            </motion.div>
-            
-            <motion.h1 variants={fadeUp} className="text-6xl md:text-8xl lg:text-9xl font-serif font-bold text-white mb-8 leading-[0.9] tracking-tight">
-              Drive <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-accent-light italic pr-4">
-                Excellence.
-              </span>
-            </motion.h1>
-            
-            <motion.p variants={fadeUp} className="text-lg md:text-xl text-gray-400 max-w-xl mb-12 font-light leading-relaxed">
-              Experience top-tier automotive excellence at First Choice Motors. Discover our premium selection of vehicles ready for you to drive home in Lahore.
-            </motion.p>
-            
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-start gap-6">
-              <a 
-                href="#inventory"
-                className="group relative px-8 py-4 overflow-hidden rounded-full bg-brand-accent text-brand-dark font-bold uppercase tracking-widest text-sm transition-all hover:scale-105"
-              >
-                <span className="relative flex items-center gap-2">
-                  Explore Inventory
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
-              <a 
-                href={mapLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 px-8 py-4 rounded-full border border-white/20 hover:border-white/50 hover:bg-white/5 transition-all text-sm font-semibold uppercase tracking-widest"
-              >
-                <MapPin size={16} className="text-brand-accent" />
-                Visit Showroom
-              </a>
-            </motion.div>
-          </motion.div>
+      <section className="relative bg-white pt-32 pb-12 overflow-hidden min-h-screen flex items-center">
+        {/* Abstract Map Background */}
+        <div className="absolute top-0 right-0 w-full lg:w-2/3 h-full pointer-events-none opacity-40">
+          <svg width="100%" height="100%" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid slice">
+            <path d="M100 100 L300 200 L500 150 L700 300" stroke="#E5E7EB" strokeWidth="2" strokeDasharray="4 4"/>
+            <path d="M200 400 L400 300 L600 450" stroke="#E5E7EB" strokeWidth="2" strokeDasharray="4 4"/>
+            <path d="M300 200 L400 300" stroke="#E5E7EB" strokeWidth="2" strokeDasharray="4 4"/>
+            <path d="M500 150 L600 50" stroke="#E5E7EB" strokeWidth="2" strokeDasharray="4 4"/>
+            <path d="M700 300 L800 200" stroke="#E5E7EB" strokeWidth="2" strokeDasharray="4 4"/>
+            <circle cx="100" cy="100" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
+            <circle cx="300" cy="200" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
+            <circle cx="500" cy="150" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
+            <circle cx="700" cy="300" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
+            <circle cx="200" cy="400" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
+            <circle cx="400" cy="300" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
+            <circle cx="600" cy="450" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
+            {/* Location Pin */}
+            <path d="M450 220 L460 240 L440 240 Z" fill="#000000"/>
+          </svg>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Scroll</span>
-          <div className="w-[1px] h-12 bg-gradient-to-b from-brand-accent to-transparent"></div>
-        </motion.div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="grid grid-cols-1 gap-8 items-center text-center">
+            {/* Text */}
+            <div className="pt-10 lg:pt-0 flex flex-col items-center">
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black leading-[1.05] tracking-tighter mb-8"
+                style={{ fontFamily: 'system-ui, sans-serif', fontWeight: 'bold' }}
+              >
+                Premium Car Dealership in Lahore
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-lg text-gray-800 font-medium max-w-md leading-relaxed"
+              >
+                Don't deny yourself the pleasure of driving the best premium cars from around the world here and now
+              </motion.p>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* Services / Features Section - Asymmetrical Bento Grid */}
-      <section id="inventory" className="py-32 relative">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 -right-1/4 w-[800px] h-[800px] bg-brand-accent/5 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[100px]"></div>
-        </div>
-
+      {/* Key Features Section */}
+      <section id="features" className="py-32 relative bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div 
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeUp}
-            className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8"
+            className="mb-16"
           >
-            <div>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="h-[1px] w-8 bg-brand-accent"></div>
-                <span className="text-brand-accent font-semibold tracking-[0.2em] uppercase text-xs">Why Choose Us</span>
-              </div>
-              <h2 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
-                The First Choice <br/><span className="italic text-gray-400 font-light">Advantage</span>
-              </h2>
+            <div className="mb-4">
+              <span className="text-gray-400 font-semibold tracking-[0.1em] uppercase text-xs">TAKING CARE OF EVERY CLIENT</span>
             </div>
-            <p className="text-gray-400 max-w-md font-light leading-relaxed">
-              We redefine the car buying experience with unparalleled service, rigorous quality standards, and a curated selection of premium vehicles in Lahore.
+            <h2 className="text-5xl md:text-6xl font-sans font-black text-black leading-tight tracking-tighter mb-6">
+              Key Features
+            </h2>
+            <p className="text-gray-800 max-w-2xl text-lg font-medium leading-relaxed">
+              We are all about our client's comfort and safety. That's why we provide the best service you can imagine.
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            {/* Large Card 1 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Feature Card 1 */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="md:col-span-8 glass-panel p-10 lg:p-12 rounded-3xl relative overflow-hidden group"
+              className="bg-white border border-gray-100 shadow-sm p-8 rounded-3xl flex flex-col justify-between min-h-[280px] hover:shadow-md transition-shadow"
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full blur-[60px] group-hover:bg-brand-accent/20 transition-colors duration-700"></div>
-              <div className="relative z-10 h-full flex flex-col justify-between">
-                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-12 text-brand-accent group-hover:scale-110 transition-transform duration-500">
-                  <Car size={28} strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h3 className="text-3xl font-serif font-semibold text-white mb-4">Premium Inventory</h3>
-                  <p className="text-gray-400 font-light leading-relaxed max-w-xl text-lg">
-                    Choose from our extensive selection of high-quality, reliable vehicles suited for every lifestyle and budget. From luxury sedans to robust SUVs.
-                  </p>
-                </div>
+              <div className="w-16 h-16 rounded-full bg-[#f0f2f8] flex items-center justify-center mb-8">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-800">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                </svg>
               </div>
+              <h3 className="text-lg font-bold text-black truncate">
+                All models have a premium package
+              </h3>
             </motion.div>
             
-            {/* Small Card 1 */}
+            {/* Feature Card 2 */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="md:col-span-4 glass-panel p-10 rounded-3xl relative overflow-hidden group"
+              className="bg-white border border-gray-100 shadow-sm p-8 rounded-3xl flex flex-col justify-between min-h-[280px] hover:shadow-md transition-shadow"
             >
-              <div className="relative z-10 h-full flex flex-col justify-between">
-                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-12 text-brand-accent group-hover:scale-110 transition-transform duration-500">
-                  <Shield size={28} strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-serif font-semibold text-white mb-3">Trusted Quality</h3>
-                  <p className="text-gray-400 font-light leading-relaxed">
-                    Every vehicle undergoes a strict multi-point inspection to ensure quality and safety.
-                  </p>
-                </div>
+              <div className="w-16 h-16 rounded-full bg-[#fdf8f6] flex items-center justify-center mb-8">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-800">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"></path>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
               </div>
+              <h3 className="text-lg font-bold text-black truncate">
+                24/7 technical support
+              </h3>
             </motion.div>
-            
-            {/* Small Card 2 */}
+
+            {/* Feature Card 3 */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="md:col-span-4 glass-panel p-10 rounded-3xl relative overflow-hidden group"
+              className="bg-white border border-gray-100 shadow-sm p-8 rounded-3xl flex flex-col justify-between min-h-[280px] hover:shadow-md transition-shadow"
             >
-              <div className="relative z-10 h-full flex flex-col justify-between">
-                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-12 text-brand-accent group-hover:scale-110 transition-transform duration-500">
-                  <Clock size={28} strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-serif font-semibold text-white mb-3">Easy Purchasing</h3>
-                  <p className="text-gray-400 font-light leading-relaxed">
-                    Convenient financing options and a seamless purchasing process tailored to you.
-                  </p>
-                </div>
+              <div className="w-16 h-16 rounded-full bg-[#f2f7f4] flex items-center justify-center mb-8">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-800">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
               </div>
+              <h3 className="text-lg font-bold text-black truncate">
+                Transparent pricing
+              </h3>
             </motion.div>
 
-            {/* Large Card 2 */}
+            {/* Feature Card 4 */}
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="md:col-span-8 glass-panel p-0 rounded-3xl relative overflow-hidden group min-h-[300px]"
+              className="bg-white border border-gray-100 shadow-sm p-8 rounded-3xl flex flex-col justify-between min-h-[280px] hover:shadow-md transition-shadow"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop" 
-                alt="Showroom" 
-                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-10 lg:p-12 w-full flex flex-col sm:flex-row justify-between items-end gap-6">
-                <div>
-                  <h3 className="text-3xl font-serif font-semibold text-white mb-2">Visit Our Showroom</h3>
-                  <p className="text-gray-300 font-light">Experience our collection in person at Faisal Town, Lahore.</p>
-                </div>
-                <a 
-                  href={mapLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-14 h-14 rounded-full bg-brand-accent text-brand-dark flex items-center justify-center hover:scale-110 transition-transform shrink-0"
-                >
-                  <ArrowRight size={24} />
-                </a>
+              <div className="w-16 h-16 rounded-full bg-[#f8f6f2] flex items-center justify-center mb-8">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-800">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
               </div>
+              <h3 className="text-lg font-bold text-black truncate">
+                Absolute confidentiality
+              </h3>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* About Section - Editorial Layout */}
-      <section id="about" className="py-32 bg-brand-gray relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-20">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+      {/* Fleet Section */}
+      <section id="inventory" className="py-32 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:w-1/2 relative"
+              transition={{ duration: 0.6 }}
             >
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Luxury Car Interior" 
-                  className="w-full h-[600px] object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-brand-dark/20 mix-blend-overlay"></div>
+              <div className="text-gray-400 font-bold tracking-[0.2em] uppercase text-xs mb-4">ONLY THE BEST CARS</div>
+              <h2 className="text-5xl md:text-6xl font-sans font-black text-black mb-6 tracking-tighter">
+                Our Vehicle Fleet
+              </h2>
+              <p className="text-gray-600 font-medium text-lg max-w-2xl mx-auto leading-relaxed">
+                We provide our customers with the most incredible driving emotions.<br className="hidden md:block" />
+                That's why we have only world-class cars in our fleet.
+              </p>
+            </motion.div>
+
+            {/* Tabs */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-12 flex flex-wrap justify-center gap-3"
+            >
+              {['Premium', 'Coupe', 'Hypercars', 'Sportcar', 'Cabriolet', 'Limousines'].map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
+                    activeTab === tab 
+                      ? 'bg-black text-white shadow-lg shadow-black/20' 
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Car Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            {/* Top Row: 3 Cars */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1000&auto=format&fit=crop" alt="Audi S7 Sportback" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </div>
-              
-              {/* Floating stat card */}
-              <motion.div 
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="absolute -bottom-10 -right-10 glass-panel p-8 rounded-2xl hidden md:block border-l-4 border-l-brand-accent"
-              >
-                <div className="text-5xl font-serif font-bold text-white mb-2">100%</div>
-                <div className="text-sm tracking-widest uppercase text-gray-400 font-semibold">Client Satisfaction</div>
-              </motion.div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-white mb-3 truncate">Audi S7 Sportback</h3>
+                <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
+                  With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
+                </p>
+                <div className="text-[22px] font-bold text-white whitespace-nowrap">
+                  $ 35, 500.00 USD
+                </div>
+              </div>
             </motion.div>
             
             <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:w-1/2"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-[1px] w-8 bg-brand-accent"></div>
-                <span className="text-brand-accent font-semibold tracking-[0.2em] uppercase text-xs">Our Legacy</span>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1000&auto=format&fit=crop" alt="Koenigsegg Jesko Hypercar" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-8 leading-tight">
-                Your Trusted <br/>
-                <span className="italic font-light text-gray-400">Dealership</span>
-              </h2>
-              
-              <div className="space-y-6 text-gray-400 font-light text-lg leading-relaxed mb-10">
-                <p>
-                  Located conveniently on Maulana Shaukat Ali Rd in Faisal Town, Lahore, First Choice Motors is dedicated to providing an exceptional car buying experience. 
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-white mb-3 truncate">Koenigsegg Jesko Hypercar</h3>
+                <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
+                  With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
                 </p>
-                <p>
-                  We understand that purchasing a car is a major decision, and we are here to help you find the perfect vehicle that matches your ambition and lifestyle.
-                </p>
+                <div className="text-[22px] font-bold text-white whitespace-nowrap">
+                  $ 754, 000.00 USD
+                </div>
               </div>
-              
-              <ul className="space-y-5 mb-12">
-                {[
-                  "Centrally located in Faisal Town, Lahore",
-                  "Clean, sanitized, and fully inspected vehicles",
-                  "Transparent pricing with no hidden fees",
-                  "Dedicated customer support"
-                ].map((item, index) => (
-                  <motion.li 
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    key={index} 
-                    className="flex items-center gap-4"
-                  >
-                    <div className="w-6 h-6 rounded-full bg-brand-accent/10 flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="text-brand-accent" size={14} />
-                    </div>
-                    <span className="text-gray-300 font-medium">{item}</span>
-                  </motion.li>
-                ))}
-              </ul>
-              
-              <a 
-                href={`tel:${phone}`}
-                className="inline-flex items-center gap-3 text-white font-bold uppercase tracking-widest text-sm hover:text-brand-accent transition-colors group"
-              >
-                Speak with our team
-                <span className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:border-brand-accent transition-colors">
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1000&auto=format&fit=crop" alt="BMW F90 M5" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-white mb-3 truncate">BMW F90 M5</h3>
+                <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
+                  With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
+                </p>
+                <div className="text-[22px] font-bold text-white whitespace-nowrap">
+                  $ 65, 000.00 USD
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Bottom Row: 3 Cars */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=1000&auto=format&fit=crop" alt="Black Lexus" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-white mb-3 truncate">Lexus LC 500</h3>
+                <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
+                  With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
+                </p>
+                <div className="text-[22px] font-bold text-white whitespace-nowrap">
+                  $ 93, 000.00 USD
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1000&auto=format&fit=crop" alt="Mercedes AMG" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-white mb-3 truncate">Mercedes AMG GT</h3>
+                <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
+                  With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
+                </p>
+                <div className="text-[22px] font-bold text-white whitespace-nowrap">
+                  $ 118, 000.00 USD
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
+            >
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1000&auto=format&fit=crop" alt="Lamborghini" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-white mb-3 truncate">Lamborghini Huracán</h3>
+                <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
+                  With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
+                </p>
+                <div className="text-[22px] font-bold text-white whitespace-nowrap">
+                  $ 206, 000.00 USD
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Contact & Location - Dark & Sleek */}
-      <section id="contact" className="py-32 relative">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.02]"></div>
+      <section id="contact" className="py-32 relative bg-gray-50">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.02] invert"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -420,31 +450,31 @@ export default function App() {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="h-[1px] w-8 bg-brand-accent"></div>
-                <span className="text-brand-accent font-semibold tracking-[0.2em] uppercase text-xs">Connect</span>
+                <div className="h-[1px] w-8 bg-black"></div>
+                <span className="text-black font-bold tracking-[0.2em] uppercase text-xs">Connect</span>
               </div>
-              <h2 className="text-5xl md:text-6xl font-serif font-bold text-white mb-8">
-                Ready to find <br/><span className="italic font-light text-gray-400">your next car?</span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-black text-black mb-8 tracking-tighter">
+                Ready to find <span className="text-black font-medium">your next car?</span>
               </h2>
-              <p className="text-gray-400 font-light mb-16 text-lg max-w-md leading-relaxed">
+              <p className="text-gray-600 font-medium mb-16 text-lg max-w-md leading-relaxed">
                 Visit our showroom in Faisal Town, Lahore or contact us directly to schedule a test drive today.
               </p>
               
               <div className="space-y-10">
                 <div className="group flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-2xl glass-panel flex items-center justify-center shrink-0 group-hover:bg-brand-accent/10 transition-colors duration-500">
-                    <MapPin size={24} className="text-brand-accent" />
+                  <div className="w-16 h-16 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center shrink-0 group-hover:border-black transition-colors duration-500">
+                    <MapPin size={24} className="text-black" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-white mb-2">Visit Our Showroom</h4>
-                    <p className="text-gray-400 font-light leading-relaxed mb-3 max-w-xs">
+                    <h4 className="text-sm font-black uppercase tracking-widest text-black mb-2">Visit Our Showroom</h4>
+                    <p className="text-gray-600 font-medium leading-relaxed mb-3 max-w-xs">
                       {address}
                     </p>
                     <a 
                       href={mapLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-accent hover:text-white transition-colors"
+                      className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-black hover:text-gray-600 transition-colors"
                     >
                       Get Directions <ChevronRight size={14} />
                     </a>
@@ -452,15 +482,15 @@ export default function App() {
                 </div>
                 
                 <div className="group flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-2xl glass-panel flex items-center justify-center shrink-0 group-hover:bg-brand-accent/10 transition-colors duration-500">
-                    <Phone size={24} className="text-brand-accent" />
+                  <div className="w-16 h-16 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center shrink-0 group-hover:border-black transition-colors duration-500">
+                    <Phone size={24} className="text-black" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-white mb-2">Call Us</h4>
-                    <p className="text-gray-400 font-light mb-3">Available for sales and inquiries.</p>
+                    <h4 className="text-sm font-black uppercase tracking-widest text-black mb-2">Call Us</h4>
+                    <p className="text-gray-600 font-medium mb-3">Available for sales and inquiries.</p>
                     <a 
                       href={`tel:${phone}`}
-                      className="text-2xl font-serif text-white hover:text-brand-accent transition-colors block"
+                      className="text-2xl font-sans font-black tracking-tighter text-black hover:text-gray-600 transition-colors block"
                     >
                       {phone}
                     </a>
@@ -468,17 +498,17 @@ export default function App() {
                 </div>
                 
                 <div className="group flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-2xl glass-panel flex items-center justify-center shrink-0 group-hover:bg-[#25D366]/10 transition-colors duration-500">
+                  <div className="w-16 h-16 rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center shrink-0 group-hover:border-[#25D366] transition-colors duration-500">
                     <MessageCircle size={24} className="text-[#25D366]" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold uppercase tracking-widest text-white mb-2">WhatsApp</h4>
-                    <p className="text-gray-400 font-light mb-4">Message us for quick responses.</p>
+                    <h4 className="text-sm font-black uppercase tracking-widest text-black mb-2">WhatsApp</h4>
+                    <p className="text-gray-600 font-medium mb-4">Message us for quick responses.</p>
                     <a 
                       href={`https://wa.me/${whatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 px-6 py-3 rounded-full hover:bg-[#25D366] hover:text-white transition-all duration-300 text-xs font-bold uppercase tracking-widest"
+                      className="inline-flex items-center gap-2 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 px-6 py-3 rounded-full hover:bg-[#25D366] hover:text-white transition-all duration-300 text-xs font-black uppercase tracking-widest"
                     >
                       <MessageCircle size={16} />
                       Message Now
@@ -493,37 +523,33 @@ export default function App() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[500px] lg:h-auto rounded-3xl overflow-hidden shadow-2xl border border-white/5"
+              className="relative h-[500px] lg:h-auto rounded-[32px] overflow-hidden bg-[#111111] flex flex-col items-center justify-center text-center p-12 shadow-2xl"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1503376712341-0048236c93bf?q=80&w=2070&auto=format&fit=crop" 
-                alt="Showroom Location" 
-                className="absolute inset-0 w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-brand-dark/60 mix-blend-multiply"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+              {/* Subtle geometric background pattern */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[30%] w-[400px] h-[400px] rounded-full border-[1.5px] border-white/5"></div>
+                <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-[40%] w-[700px] h-[700px] rounded-full border-[1.5px] border-white/5"></div>
+                
+                {/* Dots on the circles */}
+                <div className="absolute top-[35%] right-[15%] w-3 h-3 rounded-full border-[1.5px] border-white/10 bg-[#111111]"></div>
+                <div className="absolute bottom-[25%] right-[5%] w-3 h-3 rounded-full border-[1.5px] border-white/10 bg-[#111111]"></div>
+              </div>
               
-              <div className="absolute bottom-0 left-0 w-full p-8">
-                <div className="glass-panel p-8 rounded-2xl backdrop-blur-2xl border border-white/10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center">
-                      <MapPin size={20} className="text-brand-accent" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-serif font-bold text-white">FIRST CHOICE</h3>
-                      <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">Faisal Town, Lahore</p>
-                    </div>
-                  </div>
-                  <a 
-                    href={mapLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-white text-brand-dark text-center px-6 py-4 rounded-xl hover:bg-brand-accent transition-colors text-xs font-bold uppercase tracking-widest mt-6"
-                  >
-                    Open in Google Maps
-                  </a>
-                </div>
+              <div className="relative z-10 flex flex-col items-center">
+                <h3 className="text-4xl md:text-5xl font-sans font-bold text-white tracking-tight mb-4">FIRST CHOICE</h3>
+                <p className="text-gray-400 text-lg font-medium mb-10 max-w-sm leading-relaxed">
+                  Visit our showroom in Faisal Town, Lahore to explore our premium fleet.
+                </p>
+                
+                <a 
+                  href={mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full hover:bg-gray-200 transition-colors text-sm font-bold shadow-lg"
+                >
+                  <MapPin size={18} />
+                  Open in Google Maps
+                </a>
               </div>
             </motion.div>
           </div>
@@ -531,34 +557,34 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-brand-darker pt-20 pb-10 border-t border-white/5 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-brand-accent/30 to-transparent"></div>
+      <footer className="bg-white pt-20 pb-10 border-t border-gray-200 relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-10 mb-16">
             <div className="text-center md:text-left">
-              <span className="font-serif text-4xl font-bold tracking-widest text-white block mb-3">
+              <span className="font-sans text-4xl font-black tracking-tighter text-black block mb-3">
                 FIRST<span className="text-brand-accent">CHOICE</span>
               </span>
-              <p className="text-gray-500 text-sm font-light tracking-wide">Premium Car Dealership in Lahore.</p>
+              <p className="text-gray-500 text-sm font-medium tracking-wide">Premium Car Dealership in Lahore.</p>
             </div>
             
             <div className="flex items-center gap-4">
-              <a href={`tel:${phone}`} className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-brand-accent hover:border-brand-accent transition-all">
+              <a href={`tel:${phone}`} className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-black hover:border-black transition-all">
                 <Phone size={18} />
               </a>
-              <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#25D366] hover:border-[#25D366] transition-all">
+              <a href={`https://wa.me/${whatsapp}`} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-[#25D366] hover:border-[#25D366] transition-all">
                 <MessageCircle size={18} />
               </a>
-              <a href={mapLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-brand-accent hover:border-brand-accent transition-all">
+              <a href={mapLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-black hover:border-black transition-all">
                 <MapPin size={18} />
               </a>
             </div>
           </div>
           
-          <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-xs tracking-widest uppercase">&copy; {new Date().getFullYear()} First Choice Motors. All rights reserved.</p>
-            <p className="text-gray-600 text-xs tracking-widest uppercase">Lahore, Pakistan</p>
+          <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-xs font-bold tracking-widest uppercase">&copy; {new Date().getFullYear()} First Choice Motors. All rights reserved.</p>
+            <p className="text-gray-400 text-xs font-bold tracking-widest uppercase">Lahore, Pakistan</p>
           </div>
         </div>
       </footer>
