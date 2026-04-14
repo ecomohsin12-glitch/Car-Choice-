@@ -111,25 +111,16 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-white pt-40 pb-20 overflow-hidden">
-        {/* Abstract Map Background */}
-        <div className="absolute top-0 right-0 w-full lg:w-2/3 h-full pointer-events-none opacity-40">
-          <svg width="100%" height="100%" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid slice">
-            <path d="M100 100 L300 200 L500 150 L700 300" stroke="#E5E7EB" strokeWidth="2" strokeDasharray="4 4"/>
-            <path d="M200 400 L400 300 L600 450" stroke="#E5E7EB" strokeWidth="2" strokeDasharray="4 4"/>
-            <path d="M300 200 L400 300" stroke="#E5E7EB" strokeWidth="2" strokeDasharray="4 4"/>
-            <path d="M500 150 L600 50" stroke="#E5E7EB" strokeWidth="2" strokeDasharray="4 4"/>
-            <path d="M700 300 L800 200" stroke="#E5E7EB" strokeWidth="2" strokeDasharray="4 4"/>
-            <circle cx="100" cy="100" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
-            <circle cx="300" cy="200" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
-            <circle cx="500" cy="150" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
-            <circle cx="700" cy="300" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
-            <circle cx="200" cy="400" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
-            <circle cx="400" cy="300" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
-            <circle cx="600" cy="450" r="6" fill="white" stroke="#D1D5DB" strokeWidth="3"/>
-            {/* Location Pin */}
-            <path d="M450 220 L460 240 L440 240 Z" fill="#000000"/>
-          </svg>
+      <section className="relative pt-40 pb-20 overflow-hidden min-h-[600px] flex items-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=2070&auto=format&fit=crop" 
+            alt="Luxury Cars Garage" 
+            className="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -140,7 +131,7 @@ export default function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black leading-[1.05] tracking-tighter mb-8"
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.05] tracking-tighter mb-8"
                 style={{ fontFamily: 'system-ui, sans-serif', fontWeight: 'bold' }}
               >
                 Premium Car Dealership in Karachi
@@ -149,7 +140,7 @@ export default function App() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-lg text-gray-800 font-medium max-w-md leading-relaxed"
+                className="text-lg text-gray-200 font-medium max-w-md leading-relaxed"
               >
                 Don't deny yourself the pleasure of driving the best premium cars from around the world here and now
               </motion.p>
