@@ -16,7 +16,7 @@ export default function App() {
 
   const phone = "03006910513";
   const whatsapp = "03006910513";
-  const address = "948-B Maulana Shaukat Ali Rd, Block B Faisal Town, Lahore, Pakistan";
+  const address = "Karachi, Pakistan";
   const mapLink = "https://maps.app.goo.gl/rSL2eL5VhwfwncqE7";
 
   const staggerContainer = {
@@ -47,8 +47,7 @@ export default function App() {
               className="flex-shrink-0 flex items-center"
             >
               <span className="font-sans text-2xl md:text-3xl font-black tracking-tighter text-black flex items-center gap-2">
-                FIRST<span className="text-brand-accent">CHOICE</span>
-                <span className="text-sm tracking-[0.2em] text-gray-500 font-medium hidden sm:inline uppercase">MOTORS</span>
+                AA<span className="text-brand-accent">MOTORS</span>
               </span>
             </motion.div>
             
@@ -112,7 +111,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-white pt-32 pb-12 overflow-hidden min-h-screen flex items-center">
+      <section className="relative bg-white pt-40 pb-20 overflow-hidden">
         {/* Abstract Map Background */}
         <div className="absolute top-0 right-0 w-full lg:w-2/3 h-full pointer-events-none opacity-40">
           <svg width="100%" height="100%" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid slice">
@@ -136,7 +135,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 gap-8 items-center text-center">
             {/* Text */}
-            <div className="pt-10 lg:pt-0 flex flex-col items-center">
+            <div className="flex flex-col items-center">
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -144,7 +143,7 @@ export default function App() {
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-black leading-[1.05] tracking-tighter mb-8"
                 style={{ fontFamily: 'system-ui, sans-serif', fontWeight: 'bold' }}
               >
-                Premium Car Dealership in Lahore
+                Premium Car Dealership in Karachi
               </motion.h1>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -315,15 +314,15 @@ export default function App() {
               className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
             >
               <div className="aspect-[4/3] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1000&auto=format&fit=crop" alt="Audi S7 Sportback" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1000&auto=format&fit=crop" alt="Land Cruiser" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-3 truncate">Audi S7 Sportback</h3>
+                <h3 className="text-xl font-bold text-white mb-3 truncate">Land Cruiser</h3>
                 <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
                   With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
                 </p>
                 <div className="text-[22px] font-bold text-white whitespace-nowrap">
-                  $ 35, 500.00 USD
+                  PKR 85,000,000
                 </div>
               </div>
             </motion.div>
@@ -336,15 +335,15 @@ export default function App() {
               className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
             >
               <div className="aspect-[4/3] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1000&auto=format&fit=crop" alt="Koenigsegg Jesko Hypercar" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?q=80&w=1000&auto=format&fit=crop" alt="Hilux Revo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-3 truncate">Koenigsegg Jesko Hypercar</h3>
+                <h3 className="text-xl font-bold text-white mb-3 truncate">Hilux Revo</h3>
                 <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
                   With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
                 </p>
                 <div className="text-[22px] font-bold text-white whitespace-nowrap">
-                  $ 754, 000.00 USD
+                  PKR 15,500,000
                 </div>
               </div>
             </motion.div>
@@ -357,15 +356,15 @@ export default function App() {
               className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
             >
               <div className="aspect-[4/3] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1000&auto=format&fit=crop" alt="BMW F90 M5" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?q=80&w=1000&auto=format&fit=crop" alt="Honda City Aspire" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-3 truncate">BMW F90 M5</h3>
+                <h3 className="text-xl font-bold text-white mb-3 truncate">Honda City Aspire</h3>
                 <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
                   With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
                 </p>
                 <div className="text-[22px] font-bold text-white whitespace-nowrap">
-                  $ 65, 000.00 USD
+                  PKR 5,800,000
                 </div>
               </div>
             </motion.div>
@@ -379,15 +378,15 @@ export default function App() {
               className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
             >
               <div className="aspect-[4/3] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=1000&auto=format&fit=crop" alt="Black Lexus" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1566367576585-051277d52997?q=80&w=1000&auto=format&fit=crop" alt="Prado 2002 Tz" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-3 truncate">Lexus LC 500</h3>
+                <h3 className="text-xl font-bold text-white mb-3 truncate">Prado 2002 Tz</h3>
                 <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
                   With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
                 </p>
                 <div className="text-[22px] font-bold text-white whitespace-nowrap">
-                  $ 93, 000.00 USD
+                  PKR 8,500,000
                 </div>
               </div>
             </motion.div>
@@ -400,15 +399,15 @@ export default function App() {
               className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
             >
               <div className="aspect-[4/3] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1000&auto=format&fit=crop" alt="Mercedes AMG" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1610884447640-42b8ec61a933?q=80&w=1000&auto=format&fit=crop" alt="Honda Accord 2008 Black" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-3 truncate">Mercedes AMG GT</h3>
+                <h3 className="text-xl font-bold text-white mb-3 truncate">Honda Accord 2008 Black</h3>
                 <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
                   With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
                 </p>
                 <div className="text-[22px] font-bold text-white whitespace-nowrap">
-                  $ 118, 000.00 USD
+                  PKR 4,500,000
                 </div>
               </div>
             </motion.div>
@@ -421,15 +420,15 @@ export default function App() {
               className="md:col-span-4 rounded-[20px] overflow-hidden relative group shadow-sm hover:shadow-xl transition-all duration-300 bg-[#111111] border border-gray-800 flex flex-col"
             >
               <div className="aspect-[4/3] overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1000&auto=format&fit=crop" alt="Lamborghini" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fd?q=80&w=1000&auto=format&fit=crop" alt="Toyota Raize Z White" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-3 truncate">Lamborghini Huracán</h3>
+                <h3 className="text-xl font-bold text-white mb-3 truncate">Toyota Raize Z White</h3>
                 <p className="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">
                   With its aerodynamic curves and bold lines, this car is a standout on the road, turning heads and making a statement wherever it goes.
                 </p>
                 <div className="text-[22px] font-bold text-white whitespace-nowrap">
-                  $ 206, 000.00 USD
+                  PKR 7,500,000
                 </div>
               </div>
             </motion.div>
@@ -457,7 +456,7 @@ export default function App() {
                 Ready to find <span className="text-black font-medium">your next car?</span>
               </h2>
               <p className="text-gray-600 font-medium mb-16 text-lg max-w-md leading-relaxed">
-                Visit our showroom in Faisal Town, Lahore or contact us directly to schedule a test drive today.
+                Visit our showroom in Karachi or contact us directly to schedule a test drive today.
               </p>
               
               <div className="space-y-10">
@@ -536,9 +535,9 @@ export default function App() {
               </div>
               
               <div className="relative z-10 flex flex-col items-center">
-                <h3 className="text-4xl md:text-5xl font-sans font-bold text-white tracking-tight mb-4">FIRST CHOICE</h3>
+                <h3 className="text-4xl md:text-5xl font-sans font-bold text-white tracking-tight mb-4">AA MOTORS</h3>
                 <p className="text-gray-400 text-lg font-medium mb-10 max-w-sm leading-relaxed">
-                  Visit our showroom in Faisal Town, Lahore to explore our premium fleet.
+                  Visit our showroom in Karachi to explore our premium fleet.
                 </p>
                 
                 <a 
@@ -564,9 +563,9 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-10 mb-16">
             <div className="text-center md:text-left">
               <span className="font-sans text-4xl font-black tracking-tighter text-black block mb-3">
-                FIRST<span className="text-brand-accent">CHOICE</span>
+                AA<span className="text-brand-accent">MOTORS</span>
               </span>
-              <p className="text-gray-500 text-sm font-medium tracking-wide">Premium Car Dealership in Lahore.</p>
+              <p className="text-gray-500 text-sm font-medium tracking-wide">Premium Car Dealership in Karachi.</p>
             </div>
             
             <div className="flex items-center gap-4">
@@ -583,8 +582,8 @@ export default function App() {
           </div>
           
           <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-xs font-bold tracking-widest uppercase">&copy; {new Date().getFullYear()} First Choice Motors. All rights reserved.</p>
-            <p className="text-gray-400 text-xs font-bold tracking-widest uppercase">Lahore, Pakistan</p>
+            <p className="text-gray-400 text-xs font-bold tracking-widest uppercase">&copy; {new Date().getFullYear()} AA Motors. All rights reserved.</p>
+            <p className="text-gray-400 text-xs font-bold tracking-widest uppercase">Karachi, Pakistan</p>
           </div>
         </div>
       </footer>
